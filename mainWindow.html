@@ -115,7 +115,7 @@
               </div>
             </section>
             <div style="padding-top: 35px;">
-              <button class="button submit-btn" id = "submit-btn">
+              <button class="button submit-btn" id="submit-btn">
                 Submit <i class="fa fa-check"></i>
               </button>
             </div>
@@ -126,7 +126,7 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <section class="section" id="dashboard-wrap">
       <div class="container">
         <div class="columns">
           <div class="column">
@@ -240,13 +240,13 @@
         </div>
       </div>
     </section>
-  <script>
-    const electron = require("electron");
-    const ioHook = require("iohook");
-    const os = require("os");
-    const uptime2 = require('os-uptime');
+    <script>
+      const electron = require("electron");
+      const ioHook = require("iohook");
+      const os = require("os");
+      const uptime2 = require("os-uptime");
 
-    const { ipcRenderer } = electron;
+      const { ipcRenderer } = electron;
 
       let usage = document.getElementById("usage-span");
       let rest = document.getElementById("rest-span");

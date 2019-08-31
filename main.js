@@ -46,7 +46,7 @@ app.on("ready", () => {
 
   TrayWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, "trayWindow.html"),
+      pathname: path.join(__dirname, "notification.html"),
       protocol: "file",
       slashes: true
     })
