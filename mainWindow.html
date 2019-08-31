@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Test Electron App</title>
+  </head>
+  <body>
+    <div id="keys" font-size="20px">You pressed:</div>
+    <script>
+      const electron = require("electron");
+      const ioHook = require("iohook");
+      const { ipcRenderer } = electron;
+
+      let keys = document.getElementById("keys");
+
+      ioHook.on("keyup", event => {
+        keys.innerText += "  " + String.fromCharCode(event.rawcode);
+      });
+      ioHook.start();
+    </script>
+  </body>
+</html>

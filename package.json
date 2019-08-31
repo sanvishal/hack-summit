@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sanvishal/hack-summit#readme",
   "dependencies": {
-    "electron": "^6.0.7"
+    "electron": "^6.0.7",
+    "nedb-promises": "^4.0.0"
   }
 }
