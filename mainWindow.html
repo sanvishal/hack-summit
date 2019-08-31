@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Health Care App</title>
+    <link href="assets/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- <link rel="stylesheet" href="/assets/bluma-switch.min.css"> -->
+</head>
+
+<body id="bg">
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div style="float: left">
+                        <h1 class="title" id="text">
+                            <span class="icon has-text-danger" style="margin: 5px;">
+                                <i class="far fa-user"></i>
+                            </span>
+                            Hi User
+                        </h1>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="float: left" id="text">
+                        On
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        Off
+                    </div>
+                    <div style="float: right">
+                        <h2 class="subtitle circle" id="text">
+                            <span class="icon has-text-danger" style="margin: 3px;">
+                                <i class="fas fa-wrench"></i>
+                            </span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard">
+                <div class="columns">
+                    <div class="column">Typing Frequency<br>
+                        <span class="title" id="freq-span"  style="color:#eb3498">0</span>
+                        <span class="subtitle" style="color: aliceblue">
+                            CPM</span>
+                        <br>
+                        WhoA Lorem ipsum dolor sit amet..
+                    </div>
+                    <div class="column">Usage Time<br>
+                        <span class="title" id="usage-span"  style="color: #eb3498">0</span>
+                        <span class="subtitle" style="color: aliceblue">
+                            Hours</span><br>
+                        WhoA Lorem ipsum dolor sit amet..
+                    </div>
+                    <div class="column">Resting Time <br>
+                        <span class="title" id="rest-span" style="color: #eb3498">0</span>
+                        <span class="subtitle" style="color: aliceblue">
+                            Minutes</span><br>
+                        WhoA Lorem ipsum dolor sit amet..
+                    </div>
+                    <div class="column" id="workoutCount">Workouts <br>
+                        <span class="title" style="color: #eb3498">10</span>
+                        <span class="subtitle" style="color: aliceblue">
+                            workouts</span><br>
+                        WhoA Lorem ipsum dolor sit amet..
+                    </div>
+                </div>
+            </div><br>
+            <div class="dashboard2">
+                <div>
+                    <h1 class="title"> Tips </h1>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="figure">
+                                <img src="assets/tips.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="column">
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio deleniti debitis ea
+                                maxime ab voluptates quos illum officiis fugit ducimus dignissimos laboriosam quae nisi
+                                error, provident repellat fugiat ullam similique.</li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio deleniti debitis ea
+                                maxime ab voluptates quos illum officiis fugit ducimus dignissimos laboriosam quae nisi
+                                error, provident repellat fugiat ullam similique.</li>
+
+                        </div>
+                    </div>
+                    <div class="column">
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio deleniti debitis ea
+                            maxime ab voluptates quos illum officiis fugit ducimus dignissimos laboriosam quae nisi
+                            error, provident repellat fugiat ullam similique.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio deleniti debitis ea
+                            maxime ab voluptates quos illum officiis fugit ducimus dignissimos laboriosam quae nisi
+                            error, provident repellat fugiat ullam similique.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio deleniti debitis ea
+                            maxime ab voluptates quos illum officiis fugit ducimus dignissimos laboriosam quae nisi
+                            error, provident repellat fugiat ullam similique.</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <script>
+    const electron = require("electron");
+    const ioHook = require("iohook");
+    const os = require("os");
+    const { ipcRenderer } = electron;
+
+    let usage = document.getElementById("usage-span");
+    let rest = document.getElementById("rest-span");
+    let freq = document.getElementById("freq-span");
+
+    let cpm = 0,
+      cpmavg = 0,
+      avgcnt = 1,
+      mincnt = 0;
+      
+    let uptime = (os.uptime() / (60 * 60)).toString().split("."),
+      integ = uptime[0],
+      dec = uptime[1];
+    usage.innerText = integ + "." + dec.slice(0, 2);
+    console.log(os.uptime());
+    ioHook.on("keyup", event => {
+      // keys.innerText += "  " + String.fromCharCode(event.rawcode);
+      cpm++;
+    });
+
+    setInterval(function () {
+      cpmavg = (cpm + cpmavg) / 2;
+      if (Math.floor(cpmavg) == 0) {
+        mincnt++;
+      }
+      console.log(mincnt, Math.floor(cpmavg));
+      freq.innerText = Math.floor(cpmavg);
+      rest.innerText = mincnt;
+      cpm = 0;
+    }, 2000);
+    ioHook.start();
+  </script>
+</body>
+
+</html>

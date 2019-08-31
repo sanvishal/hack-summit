@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Show Notifications and alerts here!</h1>
+    <button id="close">CLOSE TRAY WINDOW</button>
+    <button id="open">CLOSE AND OPEN MAIN WINDOW</button>
+    <script>
+      const electron = require("electron");
+      const { ipcRenderer, remote } = electron;
+
+      document.getElementById("close").addEventListener("click", function(e) {
+        var window = remote.getCurrentWindow();
+        window.close();
+      });
+
+      document.getElementById("open").addEventListener("click", function(e) {
+        var window = remote.getCurrentWindow();
+        window.close();
+        ipcRenderer.send("tray:open", 1);
+      });
+    </script>
+  </body>
+</html>
