@@ -7,6 +7,11 @@ const db = require("./db");
 let MainWindow;
 let TrayWindow;
 
+// const UserReg = async (data) => {
+//   const obj = await db.userinfo.insert({data})
+//   return obj;
+// }
+
 app.on("ready", () => {
   // let isfirst = window.localStorage.getItem("isfirst", true);
   //if (!isfirst) {

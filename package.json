@@ -4,7 +4,7 @@
   "description": "\"# hack-summit\"",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "SET NODE_ENV=dev & electron ."
   },
   "repository": {
     "type": "git",
