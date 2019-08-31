@@ -6,11 +6,13 @@ const db = require("./db");
 
 let MainWindow;
 let TrayWindow;
+let traywintop = false;
 
 // const UserReg = async (data) => {
 //   const obj = await db.userinfo.insert({data})
 //   return obj;
 // }
+
 
 app.on("ready", () => {
   // let isfirst = window.localStorage.getItem("isfirst", true);
@@ -80,6 +82,7 @@ app.on("ready", () => {
     }
   ]);
   tray.setContextMenu(contextMenu);
+
   tray.on("right-click", () => {
     tray.popUpContextMenu();
   });
@@ -87,8 +90,31 @@ app.on("ready", () => {
     // MainWindow.maximize();
     // MainWindow.setAlwaysOnTop(true);
     TrayWindow.show();
+    traywintop = true;
   });
 
+  setTimeout( ()=> {
+    // if(!localStorage.getItem("isfirst")){
+      TrayWindow.show();
+      hidenot();
+    // }
+  }, 18000)
+
+  shownot = () => {
+    setInterval( ()=> {
+        TrayWindow.setAlwaysOnTop();
+        TrayWindow.show();
+        hidenot();
+    }, 18000)
+  }
+
+  hidenot = () => {
+    setInterval( () => {
+      TrayWindow.hide();
+      shownot();
+    }, 6000)
+  }
+  
   MainWindow.on("minimize", function(event) {
     event.preventDefault();
     MainWindow.hide();
