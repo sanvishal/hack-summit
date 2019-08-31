@@ -19,7 +19,8 @@
   "dependencies": {
     "electron": "^6.0.7",
     "iohook": "^0.6.1",
-    "nedb-promises": "^4.0.0"
+    "nedb-promises": "^4.0.0",
+    "os-uptime": "^2.0.2"
   },
   "iohook": {
     "targets": [

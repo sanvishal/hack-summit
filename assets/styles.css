@@ -7,6 +7,7 @@
   padding: 20px;
   margin: 10px;
   border-radius: 25px;
+  box-shadow: 0px 72px 119px -99px rgba(235, 52, 152, 0.42);
 }
 
 #text {
@@ -25,23 +26,23 @@
   font-size: 2em;
 }
 
-.circle{
-    background: white;
-    /* border-style: hidden;
+.circle {
+  background: white;
+  /* border-style: hidden;
     border-color: aliceblue; */
-    width: 35px;
-    height: 35px;
-    padding: 2px;
-    border-radius: 25px;
+  width: 35px;
+  height: 35px;
+  padding: 2px;
+  border-radius: 25px;
 }
-.circle:hover{
-    border-color: white;
-    border-style: solid; 
-    background: transparent;
-    width: 35px;
-    height: 35px;
-    padding: 0px;
-    border-radius: 25px;
+.circle:hover {
+  border-color: white;
+  border-style: solid;
+  background: transparent;
+  width: 35px;
+  height: 35px;
+  padding: 0px;
+  border-radius: 25px;
 }
 
 .switch {
@@ -102,4 +103,26 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.submit-btn {
+  margin: 15px;
+  width: 70px;
+  font-size: 22px;
+  background: linear-gradient(
+    to right,
+    rgba(248, 87, 166, 1) 0%,
+    rgba(255, 88, 88, 1) 100%
+  );
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+}
+.submit-btn:hover {
+  background: linear-gradient(
+    to right,
+    rgba(255, 88, 88, 1) 100%,
+    rgba(248, 87, 166, 1) 0%
+  );
 }

@@ -110,6 +110,8 @@
     const electron = require("electron");
     const ioHook = require("iohook");
     const os = require("os");
+    const uptime2 = require('os-uptime');
+
     const { ipcRenderer } = electron;
 
     let usage = document.getElementById("usage-span");
@@ -120,7 +122,9 @@
       cpmavg = 0,
       avgcnt = 1,
       mincnt = 0;
-      
+
+    console.log(uptime2().toLocaleString());
+
     let uptime = (os.uptime() / (60 * 60)).toString().split("."),
       integ = uptime[0],
       dec = uptime[1];
