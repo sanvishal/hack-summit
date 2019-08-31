@@ -52,7 +52,7 @@ app.on("ready", () => {
     })
   );
 
-  TrayWindow.webContents.openDevTools();
+  MainWindow.webContents.openDevTools();
   TrayWindow.hide();
 
   const mainMenu = new Menu.buildFromTemplate(mainMenTemplate);
