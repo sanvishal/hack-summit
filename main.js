@@ -8,6 +8,10 @@ let MainWindow;
 let TrayWindow;
 
 app.on("ready", () => {
+  // let isfirst = window.localStorage.getItem("isfirst", true);
+  //if (!isfirst) {
+  //MainWindow.webContents.send("isfirst:prompt", true);
+  // }
   let tray = new Tray(path.join(__dirname, "logo.png"));
   let display = electron.screen.getPrimaryDisplay();
   let width = display.bounds.width;
@@ -16,7 +20,9 @@ app.on("ready", () => {
   MainWindow = new BrowserWindow({
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    width: 1200,
+    height: 900
   });
 
   TrayWindow = new BrowserWindow({
@@ -105,6 +111,13 @@ app.on("ready", () => {
 ipcMain.on("tray:open", (err, item) => {
   MainWindow.maximize();
   MainWindow.setAlwaysOnTop(true);
+});
+
+ipcMain.on("isfirst:submit", (err, data) => {
+  if (data) {
+    console.log(data);
+    window.localStorage.setItem("isfirst", true);
+  }
 });
 
 const mainMenTemplate = [
