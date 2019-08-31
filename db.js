@@ -11,7 +11,7 @@ const dbFactory = fileName =>
   });
 
 const db = {
-  todos: dbFactory("todos.db")
+  todos: dbFactory("userinfo.db")
 };
 
 module.exports = db;
