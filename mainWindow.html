@@ -240,11 +240,13 @@
         </div>
       </div>
     </section>
-    <script>
-      const electron = require("electron");
-      const ioHook = require("iohook");
-      const os = require("os");
-      const { ipcRenderer } = electron;
+  <script>
+    const electron = require("electron");
+    const ioHook = require("iohook");
+    const os = require("os");
+    const uptime2 = require('os-uptime');
+
+    const { ipcRenderer } = electron;
 
       let usage = document.getElementById("usage-span");
       let rest = document.getElementById("rest-span");
