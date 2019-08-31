@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Health Care App</title>
-    <link href="assets/styles.css" rel="stylesheet">
+    <link href="/assets/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <!-- <link rel="stylesheet" href="/assets/bluma-switch.min.css"> -->
+    <link rel="stylesheet" href="/assets/bluma-switch.min.css">
 </head>
 
 <body id="bg">
@@ -45,23 +45,23 @@
             </div>
             <div class="dashboard">
                 <div class="columns">
-                    <div class="column">Typing Frequency<br>
-                        <span class="title" id="freq-span"  style="color:#eb3498">0</span>
+                    <div class="column" id="cpm">Typing Frequency<br>
+                        <span class="title" id="usage-span" style="color:#eb3498">123</span>
                         <span class="subtitle" style="color: aliceblue">
                             CPM</span>
                         <br>
                         WhoA Lorem ipsum dolor sit amet..
                     </div>
-                    <div class="column">Usage Time<br>
-                        <span class="title" id="usage-span"  style="color: #eb3498">0</span>
+                    <div class="column" id="usage">Usage Time<br>
+                        <span class="title" id="rest-span" style="color: #eb3498">3</span>
                         <span class="subtitle" style="color: aliceblue">
                             Hours</span><br>
                         WhoA Lorem ipsum dolor sit amet..
                     </div>
-                    <div class="column">Resting Time <br>
-                        <span class="title" id="rest-span" style="color: #eb3498">0</span>
+                    <div class="column" id="resting_time">Resting Time <br>
+                        <span class="title" style="color: #eb3498">123</span>
                         <span class="subtitle" style="color: aliceblue">
-                            Minutes</span><br>
+                            Hours</span><br>
                         WhoA Lorem ipsum dolor sit amet..
                     </div>
                     <div class="column" id="workoutCount">Workouts <br>
@@ -106,43 +106,6 @@
             </div>
         </div>
     </section>
-  <script>
-    const electron = require("electron");
-    const ioHook = require("iohook");
-    const os = require("os");
-    const { ipcRenderer } = electron;
-
-    let usage = document.getElementById("usage-span");
-    let rest = document.getElementById("rest-span");
-    let freq = document.getElementById("freq-span");
-
-    let cpm = 0,
-      cpmavg = 0,
-      avgcnt = 1,
-      mincnt = 0;
-      
-    let uptime = (os.uptime() / (60 * 60)).toString().split("."),
-      integ = uptime[0],
-      dec = uptime[1];
-    usage.innerText = integ + "." + dec.slice(0, 2);
-    console.log(os.uptime());
-    ioHook.on("keyup", event => {
-      // keys.innerText += "  " + String.fromCharCode(event.rawcode);
-      cpm++;
-    });
-
-    setInterval(function () {
-      cpmavg = (cpm + cpmavg) / 2;
-      if (Math.floor(cpmavg) == 0) {
-        mincnt++;
-      }
-      console.log(mincnt, Math.floor(cpmavg));
-      freq.innerText = Math.floor(cpmavg);
-      rest.innerText = mincnt;
-      cpm = 0;
-    }, 2000);
-    ioHook.start();
-  </script>
 </body>
 
 </html>
