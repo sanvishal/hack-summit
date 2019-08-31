@@ -1,0 +1,22 @@
+{
+  "name": "hack-summit",
+  "version": "1.0.0",
+  "description": "\"# hack-summit\"",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanvishal/hack-summit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanvishal/hack-summit/issues"
+  },
+  "homepage": "https://github.com/sanvishal/hack-summit#readme",
+  "dependencies": {
+    "electron": "^6.0.7"
+  }
+}

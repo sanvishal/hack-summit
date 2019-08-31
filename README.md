@@ -1,1 +1,1 @@
-"# hack-summit" 
+# hack-summit
