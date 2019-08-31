@@ -11,7 +11,9 @@ const dbFactory = fileName =>
   });
 
 const db = {
-  todos: dbFactory("userinfo.db")
+  userinfo: dbFactory("userinfo.db"),
+  appmetadata: dbFactory("appmeta.db"),
+  exercises: dbFactory("exercises.db")
 };
 
 module.exports = db;
