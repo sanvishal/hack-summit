@@ -1,8 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
-.notif-bg {
-  background: #252a41;
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+#notif-bg {
+  background: #252a41 !important;
+  padding: 5px;
+  overflow-y: hidden !important;
+}
+
+.notif-img {
+  width: 270px;
+  padding-right: 15px;
+  border-radius: 10px;
+}
+
+.notif-img img {
+  border-radius: 10px;
+}
+
+.benefits-title {
+  font-size: 25px;
+}
+
+.desc {
+  font-family: "Lato";
+  font-size: 20px;
+  color: white;
+}
+
+.rand-message {
+  padding-top: 10px;
+  font-weight: bolder;
+  font-size: 24px;
+  color: white;
+  font-family: "Muli";
+}
+
+.btn {
+  margin: 15px;
+  width: 100px;
+  font-size: 22px;
+  background: linear-gradient(
+    to right,
+    rgba(248, 87, 166, 1) 0%,
+    rgba(255, 88, 88, 1) 100%
+  );
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.btn:hover {
+  background: linear-gradient(
+    to right,
+    rgba(255, 88, 88, 1) 100%,
+    rgba(248, 87, 166, 1) 0%
+  );
+}
+
+.divider {
+  margin-top: 35px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 1px;
+  background: #404459;
+}
+
+.did-you {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
 }

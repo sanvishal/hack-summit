@@ -35,10 +35,10 @@ app.on("ready", () => {
       nodeIntegration: true
     },
     frame: false,
-    width: 600,
-    height: 600,
-    x: width - 600,
-    y: height - 600
+    width: 800,
+    height: 500,
+    x: width - 800,
+    y: height - 500
   });
 
   MainWindow.loadURL(
@@ -57,7 +57,7 @@ app.on("ready", () => {
     })
   );
 
-  MainWindow.webContents.openDevTools();
+  TrayWindow.webContents.openDevTools();
   TrayWindow.hide();
 
   const mainMenu = new Menu.buildFromTemplate(mainMenTemplate);
