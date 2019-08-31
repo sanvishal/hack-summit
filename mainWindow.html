@@ -7,17 +7,48 @@
     <title>Test Electron App</title>
   </head>
   <body>
-    <div id="keys" font-size="20px">You pressed:</div>
+    <!-- <div id="keys" font-size="20px">You pressed:</div> -->
+    <div id="freq" font-size="20px">CPM: <span id="freq-span"></span></div>
+    <div id="usage" font-size="20px">
+      USAGE TIME: <span id="usage-span"></span> hrs
+    </div>
+    <div id="rest" font-size="20px">
+      RESTING TIME: <span id="rest-span"></span> mins
+    </div>
     <script>
       const electron = require("electron");
       const ioHook = require("iohook");
+      const os = require("os");
       const { ipcRenderer } = electron;
 
-      let keys = document.getElementById("keys");
+      let usage = document.getElementById("usage-span");
+      let rest = document.getElementById("rest-span");
+      let freq = document.getElementById("freq-span");
 
+      let cpm = 0,
+        cpmavg = 0,
+        avgcnt = 1,
+        mincnt = 0;
+      let uptime = (os.uptime() / (60 * 60)).toString().split("."),
+        integ = uptime[0],
+        dec = uptime[1];
+      usage.innerText = integ + "." + dec.slice(0, 2);
+      console.log(os.uptime());
       ioHook.on("keyup", event => {
-        keys.innerText += "  " + String.fromCharCode(event.rawcode);
+        // keys.innerText += "  " + String.fromCharCode(event.rawcode);
+        cpm++;
       });
+
+      setInterval(function() {
+        cpmavg = (cpm + cpmavg) / 2;
+        if (Math.floor(cpmavg) == 0) {
+          mincnt++;
+        }
+        console.log(mincnt, Math.floor(cpmavg));
+        freq.innerText = Math.floor(cpmavg);
+        rest.innerText = mincnt;
+        cpm = 0;
+      }, 2000);
       ioHook.start();
     </script>
   </body>

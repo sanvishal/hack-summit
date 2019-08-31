@@ -18,6 +18,22 @@
   "homepage": "https://github.com/sanvishal/hack-summit#readme",
   "dependencies": {
     "electron": "^6.0.7",
+    "iohook": "^0.6.1",
     "nedb-promises": "^4.0.0"
+  },
+  "iohook": {
+    "targets": [
+      "node-64",
+      "electron-73"
+    ],
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "arches": [
+      "x64",
+      "ia32"
+    ]
   }
 }
