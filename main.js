@@ -65,7 +65,7 @@ app.on("ready", () => {
       TrayWindow.webContents.send("exercise-details", notifs.getNormalPlan());
       TrayWindow.setAlwaysOnTop(true);
       TrayWindow.show();
-    }, 600000);
+    }, 6000);
   };
 
   MainWindow.webContents.openDevTools();
