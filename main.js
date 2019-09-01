@@ -8,7 +8,8 @@ const notifs = require("./notifs");
 let MainWindow;
 let TrayWindow;
 let traywintop = false,
-  done = false;
+  done = false
+  shownotif = true;
 
 // const UserReg = async (data) => {
 //   const obj = await db.userinfo.insert({data})
@@ -61,11 +62,13 @@ app.on("ready", () => {
   );
 
   show = () => {
-    setTimeout(() => {
-      TrayWindow.webContents.send("exercise-details", notifs.getNormalPlan());
-      TrayWindow.setAlwaysOnTop(true);
-      TrayWindow.show();
-    }, 6000);
+    if(shownotif){
+      setTimeout(() => {
+        TrayWindow.webContents.send("exercise-details", notifs.getNormalPlan());
+        TrayWindow.setAlwaysOnTop(true);
+        TrayWindow.show();
+      }, 10000);
+    }
   };
 
   MainWindow.webContents.openDevTools();
@@ -149,6 +152,20 @@ ipcMain.on("no:clicked", (err, item) => {
   TrayWindow.hide();
   show();
 });
+
+ipcMain.on("no:notifs", (err, item) => {
+  //TrayWindow.close();
+  shownotif = false;
+  TrayWindow.hide();
+  show();
+})
+
+ipcMain.on("yes:notifs", (err, item) => {
+  TrayWindow.show();
+  shownotif = true;
+  // show();
+})
+
 
 const mainMenTemplate = [
   {

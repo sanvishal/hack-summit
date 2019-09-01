@@ -9,6 +9,7 @@ let isfirst = localStorage.getItem("isfirst", true);
 if (!isfirst) {
   document.getElementById("dashboard-wrap").style.display = "none";
 } else {
+  document.getElementById("onSettingsChange").innerHTML = "";
   document.getElementById("form-wrap").style.display = "none";
   document.getElementById("dashboard-wrap").style.display = "block";
 }

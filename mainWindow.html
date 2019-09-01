@@ -21,7 +21,7 @@
           <section class="hero">
             <div class="hero-body">
               <div class="row">
-                <h1 class="title">
+                <h1 class="title" id = "onSettingsChange">
                   Let's get started
                 </h1>
                 <h2 class="subtitle">
@@ -131,16 +131,20 @@
         </div>
         <div class="column">
           <div style="float: left" id="text">
-            On
+
+            <span class="icon has-text-danger" style="margin: 3px;">
+              <i class="far fa-bell"></i>
+            </span>
             <label class="switch">
-              <input type="checkbox" checked />
+              <input id="quit" type="checkbox" checked />
               <span class="slider round"></span>
             </label>
-            Off
+
+
           </div>
           <div style="float: right">
             <h2 class="subtitle circle" id="text">
-              <span class="icon has-text-danger" style="margin: 3px;">
+              <span id = "settings" class="icon has-text-danger" style="margin: 3px;">
                 <i class="fas fa-wrench"></i>
               </span>
             </h2>
@@ -196,12 +200,10 @@
             </li>
           </div>
           <div class="column"><span class="title">Our Excecise Plan for You</span></div>
-          
-        </div>
-       
-      </div>
 
-      
+        </div>
+
+      </div>
 
       <!-- <div class="dashboard2"><span class="titl">Graphical Analysis</span></div> -->
 
@@ -255,6 +257,23 @@
     let usage = document.getElementById("usage-span");
     let rest = document.getElementById("rest-span");
     let freq = document.getElementById("freq-span");
+    let quit = document.getElementById("quit");
+
+    quit.addEventListener("click", (e) => {
+      var bool = document.getElementById("quit").checked;
+      if (!bool) {
+        ipcRenderer.send("no:notifs", 1);
+      } else {
+        ipcRenderer.send("yes:notifs", 1);
+      }
+    });
+
+    let settings = document.getElementById("settings");
+
+    settings.addEventListener("click", (e) => {
+      document.getElementById("dashboard-wrap").style.display = "none";
+      document.getElementById("form-wrap").style.display = "block";
+    })
 
     let cpm = 0,
       cpmavg = 0,
