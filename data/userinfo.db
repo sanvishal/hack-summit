@@ -1,8 +1,1 @@
-<<<<<<< HEAD
 {"data":{"name":"Maneesh","gender":"Male","prof":"Developer","orientation":"sit","roomspc":"Small - Sit/Stand Exercises","freetime":"less than 5mins"},"_id":"i8A2WXH1EM5s569l","createdAt":{"$$date":1567312769763},"updatedAt":{"$$date":1567312769763}}
-=======
-{"data":{"name":"dgdgf","gender":"Male","orientation":"sit","roomspc":"Small - Sit/Stand Exercises","freetime":"less than 5mins","prof":"Designer"},"_id":"CfGMi2INyQs1CgOG","createdAt":{"$$date":1567303868072},"updatedAt":{"$$date":1567303868072}}
-{"data":{"name":"","gender":"Male","prof":"Developer","orientation":"sit","roomspc":"Small - Sit/Stand Exercises","freetime":"less than 5mins"},"_id":"FXETu6YRdkAualtN","createdAt":{"$$date":1567312732165},"updatedAt":{"$$date":1567312732165}}
-{"data":{"name":"","gender":"Male","prof":"Developer","orientation":"sit","roomspc":"Small - Sit/Stand Exercises","freetime":"less than 5mins"},"_id":"trSessOwbcEvaLc5","createdAt":{"$$date":1567313027319},"updatedAt":{"$$date":1567313027319}}
-{"data":{"name":"","gender":"Male","prof":"Developer","orientation":"sit","roomspc":"Small - Sit/Stand Exercises","freetime":"less than 5mins"},"_id":"zzDelci75r3I2jWR","createdAt":{"$$date":1567313312396},"updatedAt":{"$$date":1567313312396}}
->>>>>>> 4d498f3c621220fff43e9ec616765665a868864b
