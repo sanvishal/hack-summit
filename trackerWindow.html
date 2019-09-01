@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Health Care App</title>
+    <link href="assets/trackwindow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    
+    <!-- <link rel="stylesheet" href="/assets/bluma-switch.min.css"> -->
+</head>
+
+<body>
+    <section>
+        <canvas id="bar"></canvas>
+    </section>
+    <script>
+        let barChart = document.getElementById('bar').getContext('2d');
+        var myChart = new Chart(barChart, {
+            type: 'line',
+            data: {
+                labels: ['HTML/CSS/JS', 'Node.js', 'React.js', 'Firebase/MongoDB', 'Photoshop/Adobe XD', 'Bootstrap/Materialize'],
+                datasets: [{
+                    label: '% Known',
+                    data: [65, 50, 30, 70, 80, 75],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(153, 102, 255, 0.7)',
+                        'rgba(255, 159, 64, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 2)',
+                        'rgba(54, 162, 235, 2)',
+                        'rgba(255, 206, 86, 2)',
+                        'rgba(75, 192, 192, 2)',
+                        'rgba(153, 102, 255, 2)',
+                        'rgba(255, 159, 64, 2)'
+                    ],
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+
+    </script>
+</body>

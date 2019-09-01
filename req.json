@@ -12,9 +12,7 @@
                 "sets": 3,
                 "prof": [
                         "gamer",
-                        "developer",
-                        "Editor",
-                        "Designer"
+                        "developer"
                 ],
                 "part": [
                         "back",
@@ -25,7 +23,7 @@
                 "sit": true,
                 "img": "https://i0.wp.com/thumbs.gfycat.com/HalfImmenseAnchovy-size_restricted.gif?w=1155",
                 "caution": "The Child’s Pose places pressure and strain on the knees. If you experience knee pain and are unable to perform the pose to the full extent, place a rolled yoga mat or towel between your thighs and calves. This will add a cushion and relieve any unnecessary strain on your knees.",
-                "orien": "sit"
+                "orien": "lay"
         },
         {
                 "ename": "Knee To Chest",
@@ -39,8 +37,6 @@
                 "sets": 3,
                 "prof": [
                         "gamer",
-                        "developer",
-                        "Editor",
                         "Designer"
                 ],
                 "part": [
@@ -52,7 +48,7 @@
                 "sit": true,
                 "caution": "Avoid this exercise if you have osteoporosis to reduce the risk of vertebral fractures.",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/BewitchedWellinformedDuckling-size_restricted.gif?w=1155",
-                "orien": "sit"
+                "orien": "lay"
         },
         {
                 "ename": "Piriformis",
@@ -64,9 +60,8 @@
                 "duration": 120,
                 "sets": 3,
                 "prof": [
-                        "gamer",
+                        
                         "developer",
-                        "Editor",
                         "Designer"
                 ],
                 "part": [
@@ -75,10 +70,10 @@
                         "Hamstrings"
                 ],
                 "stand": true,
-                "sit": true,
+                "sit": false,
                 "caution": "Avoid this exercise if you have osteoporosis to reduce the risk of vertebral fractures.",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/OrangeSkinnyBlacklemur-size_restricted.gif?w=1155",
-                "orien": "sit"
+                "orien": "lay"
         },
         {
                 "ename": "Seated Spinal Twist",
@@ -90,9 +85,8 @@
                 "sets": 3,
                 "prof": [
                         "gamer",
-                        "developer",
-                        "Editor",
-                        "Designer"
+                         "Editor"
+                        
                 ],
                 "part": [
                         "Lower Back",
@@ -100,7 +94,7 @@
                         "Shoulders",
                         "Joints"
                 ],
-                "stand": true,
+                "stand": false,
                 "sit": true,
                 "caution": "Not recommended for those with knee or lower back maladies.",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/FearlessUnimportantGoldeneye-size_restricted.gif?w=1155",
@@ -118,8 +112,7 @@
                 "repition": 5,
                 "sets": 5,
                 "prof": [
-                        "gamer",
-                        "developer",
+                        "programmer",
                         "Editor",
                         "Designer"
                 ],
@@ -132,7 +125,7 @@
                 "sit": true,
                 "caution": "When you engage your abdominal muscles, make sure to focus and really engage them. Don't just push your belly out or suck it in as you perform the movement. You'll feel deeper muscles (transverse abdominus) working once you've fully engaged your core./If you let your buttocks come up off the floor as your pelvis tilts, you're actually moving more into a bridge position rather than a pelvic tilt. You also may end up rolling your pelvis in the wrong direction (toward your feet rather than your head).",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/FoolishDevotedImpala-size_restricted.gif?w=1155",
-                "orien": "sit"
+                "orien": "lay"
         },
         {
                 "ename": "Cat-Cow",
@@ -145,19 +138,17 @@
                 "sets": 3,
                 "prof": [
                         "gamer",
-                        "developer",
-                        "Editor",
                         "Designer"
                 ],
                 "part": [
                         "Spine",
                         "abdominals"
                 ],
-                "stand": true,
+                "stand": false,
                 "sit": true,
                 "caution": "Don't Strain Your Neck.",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/ShimmeringVainBee-size_restricted.gif?w=1155",
-                "orien": "sit"
+                "orien": "lay"
         },
         {
                 "ename": "Sphinx",
@@ -185,7 +176,7 @@
                 "sit": true,
                 "caution": "Do not practice Sphinx Pose if you have a recent or chronic injury to the back, arms, or shoulders. ",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/FilthyDarlingBlackfish-size_restricted.gif?w=1155",
-                "orien": "sit"
+                "orien": "lay"
         },
         {
                 "ename": "Eye Care",
@@ -211,8 +202,7 @@
                 "sets": 3,
                 "prof": [
                         "gamer",
-                        "developer",
-                        "Editor",
+                       "Programmer",
                         "Designer"
                 ],
                 "part": [
@@ -221,7 +211,7 @@
                         "lower legs"
                 ],
                 "stand": true,
-                "sit": true,
+                "sit": false,
                 "caution": "Sit upright",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/JoyousEasyHorseshoecrab-size_restricted.gif?w=1155",
                 "orien": "sit"
@@ -246,10 +236,10 @@
                         "lower legs"
                 ],
                 "stand": true,
-                "sit": true,
+                "sit": false,
                 "caution": "It also challenges your balance and coordination.",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/OrderlyCraftyLadybug-size_restricted.gif?w=1155",
-                "orien": "stand"
+                "orien": "sit"
         },
         {
                 "ename": "Squats",
@@ -261,9 +251,8 @@
                 "sets": 3,
                 "prof": [
                         "gamer",
-                        "developer",
-                        "Editor",
-                        "Designer"
+                        "developer"
+                        
                 ],
                 "part": [
                         "core",
@@ -271,10 +260,10 @@
                         "lower legs"
                 ],
                 "stand": true,
-                "sit": true,
+                "sit": false,
                 "caution": "It also challenges your balance and coordination.",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/RelievedGregariousIberianmole-size_restricted.gif?w=1155",
-                "orien": "stand"
+                "orien": "sit"
         },
         {
                 "ename": "Reverse Lunges",
@@ -285,10 +274,9 @@
                 "repition": 12,
                 "sets": 3,
                 "prof": [
-                        "gamer",
+                      
                         "developer",
-                        "Editor",
-                        "Designer"
+                        "Editor"
                 ],
                 "part": [
                         "core",
@@ -296,10 +284,10 @@
                         "lower legs"
                 ],
                 "stand": true,
-                "sit": true,
+                "sit": false,
                 "caution": "It also challenges your balance and coordination.",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/DearScientificBorzoi-size_restricted.gif?w=1155",
-                "orien": "stand"
+                "orien": "sit"
         },
         {
                 "ename": "Step ups",
@@ -325,7 +313,7 @@
                 "sit": true,
                 "caution": "It also challenges your balance and coordination.You’ll need a bench or box that’s at knee-height or slightly lower.",
                 "img": "https://i0.wp.com/thumbs.gfycat.com/PertinentHorribleAllensbigearedbat-size_restricted.gif?w=1155",
-                "orien": "stand"
+                "orien": "sit"
         },
         {
                 "ename": "calf raises",
@@ -337,9 +325,7 @@
                 "repition": 12,
                 "sets": 3,
                 "prof": [
-                        "gamer",
-                        "developer",
-                        "Editor",
+                        "programmer",          
                         "Designer"
                 ],
                 "part": [
@@ -349,10 +335,10 @@
                         "calf muscles"
                 ],
                 "stand": true,
-                "sit": true,
+                "sit": false,
                 "caution": " If you suffer from lower back problems, a better exercise is the calf press as during a standing calf raise the back has to support the weight being lifted. Also, maintain your back straight and stationary at all times. Rounding of the back can cause lower back injury.",
                 "img": "https://media1.tenor.com/images/c88a8777d252eab66084a7409a96ec2d/tenor.gif?itemid=13385387",
-                "orien": "stand"
+                "orien": "sit"
         },
         {
                 "ename": "Hamstring Curls",
@@ -363,9 +349,8 @@
                 "repition": 12,
                 "sets": 3,
                 "prof": [
-                        "gamer",
+                       "programmer",
                         "developer",
-                        "Editor",
                         "Designer"
                 ],
                 "part": [
@@ -375,9 +360,119 @@
                         "calf muscles"
                 ],
                 "stand": true,
-                "sit": true,
+                "sit": false,
                 "caution": "Just make sure you avoid arching your back in the process.",
-                "img": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ae383027-c9e2-467a-a4a2-dd6bf31aa324/ezgif-2-f3916b2cc429.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAT73L2G45O3TDN6ND%2F20190831%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20190831T134133Z&X-Amz-Expires=86400&X-Amz-Security-Token=AgoJb3JpZ2luX2VjEBYaCXVzLXdlc3QtMiJHMEUCIQC2t5ZecEvdFG9jWQwmTSJvg7BC8wfSEIN9e19l9KSuawIgUL6t84hRB1GnA4S1ETB6tdA63oEcHNX0b6uYiLhxHIEq4wMIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDKt90oSq8p0aJQ0FfSq3A3N0BXlb79Sqe3qaNcCWoAUOzBxyIpmLLVkoXt1b%2B45sWT4iBZGnEpvphEV4rAPoppRlbBHrD3jQLIUmhuJV571GKW9xAhyjJBEYluGpZFCECqI1ESD%2FvSx6X9O2oGN2PVT4h%2FO3jc8PzpmuYCtLOEsqelXxw8eyE4B6Rt%2Fa4zDvyDa06OSQW11zdLekJ9lXJiWWVaNWYKB4DTAwVUuotB5kolWuB2NxSM0I6h7LP8gSwqoHPRk98N%2FIaItYK5BUU58%2FH7FO4sCNAIByi30HUJn7FR1K8KOhsFDZshqmfH5yUKYLAZWtmAOaqhdq768tI6Ba56wMsfL78eoPKzfqrnbYyBRi47EqBhn9EZtHBmfplxqwp9r%2FeSIyrGWmt3Rv5qXTb7NAemH47yYqYBozFE8WctiwozJtlpIDssl5R%2B6ESUgoSG4TYvYTNUCs7GVrUDJtZDuqagsV0zvr5TqyE%2F5DHqisQJT71WYexLg2Y0z4UPIvwpX6UKKhbF%2BeY7hdEOKToAep4H6kNHaCaqfMIAkbGQJ3eG1GyvAKeb5RE7cP0rjXOx5Ae8mJFNxIv8nLC8pQH5oOONowyOqp6wU6tAFdcKQSt31YLYmkwlxwVlRzYIF6sO%2Bd3vZ4%2BksfRGctQB%2Ft4RQ1bqP%2BtluziV1waVgwqzgOa67dCnwaVnwS2SSPqwTY%2F2KPdn6FwGcFbBfjpp%2BT3O%2F8IOJZTYnB9FiHzX10cr%2BbQS7eHMXsyukz0bAdfBqlDzSLFqJhCBJ9S4mSssvsmCG%2BTOUhEHvRHKSOtcuedTTT8lNu34Yb2rcEIp4YVTDMWfJLA7cKQ5QrfHwTyElCG9E%3D&X-Amz-Signature=af319b3a55c735f80ee1cf2e0f33a122de42c096e1973435f7f133eb10bbc297&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22ezgif-2-f3916b2cc429.gif%22",
-                "orien": "stand"
+                "img": "https://i.pinimg.com/originals/1e/06/4b/1e064b54262d17d9f2cf964ac80ccbd7.gif",
+                "orien": "lay"
+        }
+        ,
+        {
+                "ename": "Raised fist stretch",
+                "desc": "Start with your arm up beside your head, with your hand open.Make a fist, keeping your thumb outside of it.Slide your fingers toward your wrist until you feel a stretch.",
+                "ben": [
+                        "Improving poor posture and opening the chest",
+                        " Strengthening weak shoulders and arms",
+                        "Getting rid of text-neck syndrome"
+                ],
+                "duration": 30,
+                "sets": 3,
+                "prof": [
+                        "gamer",
+                        "Editor"
+                ],
+                "part": [
+                        "wrist",
+                        "hand",
+                        "Shoulders"
+                ],
+                "stand": true,
+                "sit": true,
+                "caution": "A person should do the exercises below slowly and gently, focusing on stretching and strengthening. If the stretch hurts, stop.",
+                "img": "https://cdn-prod.medicalnewstoday.com/content/images/articles/324/324489/raised-fist-stretch.jpg",
+                "orien": "sit"
+        }
+        ,
+        {
+                "ename":"Wrist rotations",
+                "desc":"Stretch your arm out in front of you.Slowly, point the fingers down until you feel a stretch. Use the other hand to gently pull the raised hand toward the body. Hold this position for 3–5 seconds.",
+                "ben": [
+                    "Increase blood circulation to the wrists for healthy mobility of our hands.",
+                    "Increased dexterity",
+                    "Reduced joint pain"
+
+                ],
+                "repition": 10,
+                "sets": 3,
+                "prof": [
+                        "Editor",
+                        "Designer",
+                        "Programmer"
+                ],
+                "part": [
+                        "wrist",
+                        "forearm",
+                        "hand",
+                        "Shoulders"
+                ],
+                "stand": false,
+                "sit": true,
+                "caution": "A person should do the exercises below slowly and gently, focusing on stretching and strengthening. If the stretch hurts, stop.",
+                "img": "https://im3.ezgif.com/tmp/ezgif-3-f261301b36b7.gif",
+                "orien": "sit"
+
+
+
+        }
+        ,
+        {
+                "ename":"Head Roll",
+                "desc":"The head roll is a strength-training and stretching exercise that works the trapezius and cervical spine muscles. When done properly, it can help improve upper-body stability, range of motion and flexibility",
+                "ben": [
+                  "Maintain good posture.",
+                  " Neck Rolls to Improve Flexibility"
+
+                ],
+                "duration": 30,
+                "sets": 3,
+                "prof": [
+                       "developer",
+                        "gamer",
+                        "Programmer"
+                ],
+                "part": [
+                        "neck",
+                        "Shoulders"
+                ],
+                "stand": false,
+                "sit": true,
+                "caution": "Don’t shrug your shoulders upward when you do head rolls. Shrugging limits range of motion and can decrease the effectiveness of the exercise. Contact a physical therapist or doctor if you don't think you are performing the head roll correctly.",
+                "img": "https://www.cdn.spotebi.com/wp-content/uploads/2015/03/neck-rolls-exercise-illustration.gif",
+                "orien": "sit"
+        }
+        ,
+        {
+                "ename":"Shoulder Roll",
+                "desc":"Stand with feet shoulder width apart and arms to your sides. Rotate shoulders in a forward direction making big circles with them and then rotate them backwards. Keep your back straight and breathing normal. This exercise is great for loosening up the shoulder muscles.",
+                "ben": [
+             "removing accumulated stress and tension in the shoulders and improving circulation in those joints",
+             "helps reduce stiffness in the sholuder area"
+
+                ],
+                "duartion": 30,
+                "sets": 3,
+                "prof": [
+                       "developer",
+                        "Programmer"
+                ],
+                "part": [
+                        "chest",
+                        "upperback",
+                        "Shoulders"
+                ],
+                "stand": false,
+                "sit": true,
+                "caution": "Stand straight with your arms by your side and with your feet wide enough",
+                "img": "https://www.cdn.spotebi.com/wp-content/uploads/2015/03/shoulder-rolls-exercise-illustration.gif",
+                "orien": "sit"
         }
 ]
