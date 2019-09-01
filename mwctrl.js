@@ -19,6 +19,7 @@ let form = document.getElementById("form-wrap");
 submitbtn.addEventListener("click", e => {
   var name = document.getElementById("name-ipc").value;
   var gender = document.getElementById("gender-ipc").value;
+  var profession = document.getElementById("prof-ipc").value;
   if (document.getElementById("standing-desk-ipc").checked) {
     var standing = document.getElementById("standing-desk-ipc").value;
   }
@@ -40,7 +41,8 @@ submitbtn.addEventListener("click", e => {
     gender: gender,
     orientation: orientation,
     roomspc: roomspc,
-    freetime: freetime
+    freetime: freetime,
+    prof: profession
   };
 
   UserReg(userjson)
@@ -54,3 +56,7 @@ submitbtn.addEventListener("click", e => {
       console.log(err);
     });
 });
+
+function test() {
+  console.log(require("./notifs").getNormalPlan());
+}
