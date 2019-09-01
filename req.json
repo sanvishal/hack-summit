@@ -182,12 +182,17 @@
                 "ename": "Eye Care",
                 "exer": [
                         {
-                                "desc": "Rub the palms of your hands vigorously, until they are warm and place them gently over your eyelids.Persist until the heat from the hands has been completely absorbed by the eyes.Repeat two to three times."
+                                "desc": "Rub the palms of your hands vigorously, until they are warm and place them gently over your eyelids.Persist until the heat from the hands has been completely absorbed by the eyes.Repeat two to three times.",
+                                "prof":["Programmer","gamer","developer"],
+                                "img":"https://previews.123rf.com/images/iodrakon/iodrakon1007/iodrakon100700018/7462725-stock-image-of-businessman-covering-his-eyes-with-his-hands-over-white-background.jpg"
                         },
                         {
-                                "desc": "Sit comfortably with your eyes open. Blink 10-15 times very quickly. Close your eyes and relax for 20 seconds. Repeat this 4-5 times."
+                                "desc": "Sit comfortably with your eyes open. Blink 10-15 times very quickly. Close your eyes and relax for 20 seconds. Repeat this 4-5 times.",
+                                "prof":["Programmer","gamer","developer"],
+                                "img":"https://media.giphy.com/media/l41YdAa3Yll5NHfwI/giphy.gif"
                         },
-                        {
+                        {        "img":"https://media2.giphy.com/media/5YbMFzxVlKqYXAmpDv/giphy.gif",
+                                "prof":["Programmer","gamer","developer"],
                                 "desc": "Pick a point on the floor about 10 feet in front of you and focus on it.Trace an imaginary figure eight with your eyes.Keep tracing for 30 seconds,then switch directions"
                         }
                 ]
