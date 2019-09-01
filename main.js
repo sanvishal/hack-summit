@@ -68,7 +68,7 @@ app.on("ready", () => {
     }, 6000);
   };
 
-  TrayWindow.webContents.openDevTools();
+  MainWindow.webContents.openDevTools();
   TrayWindow.hide();
   show();
 

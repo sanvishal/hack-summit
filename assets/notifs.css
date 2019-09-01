@@ -44,6 +44,14 @@
   font-family: "Muli";
 }
 
+.ename {
+  padding-top: 10px;
+  font-style: italic;
+  font-size: 16px;
+  color: white;
+  font-family: "Muli";
+}
+
 .btn {
   margin: 15px;
   width: 100px;
