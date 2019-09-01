@@ -1,14 +1,14 @@
-const db = require("./db");
+// const db = require("./db");
 
-const UserReg = async (data) => {
-  const obj = await db.userinfo.insert({data})
+const UserReg = async data => {
+  const obj = await db.userinfo.insert({ data });
   return obj;
-}
+};
 
 let isfirst = localStorage.getItem("isfirst", true);
 if (!isfirst) {
   document.getElementById("dashboard-wrap").style.display = "none";
-}else{
+} else {
   document.getElementById("form-wrap").style.display = "none";
   document.getElementById("dashboard-wrap").style.display = "block";
 }
@@ -20,6 +20,7 @@ submitbtn.addEventListener("click", e => {
   var name = document.getElementById("name-ipc").value;
   var prof = document.getElementById("prof-ipc").value;
   var gender = document.getElementById("gender-ipc").value;
+  var profession = document.getElementById("prof-ipc").value;
   if (document.getElementById("standing-desk-ipc").checked) {
     var standing = document.getElementById("standing-desk-ipc").value;
   }
@@ -30,29 +31,33 @@ submitbtn.addEventListener("click", e => {
   var freetime = document.getElementById("free-ipc").value;
 
   var orientation;
-  if(sit == "on"){
+  if (sit == "on") {
     orientation = "sit";
-  }else if(standing == "on"){
+  } else if (standing == "on") {
     orientation = "stand";
   }
 
   const userjson = {
-    name : name,
+    name: name,
     gender: gender,
-    prof : prof,
-    orientation : orientation,
-    roomspc : roomspc,
-    freetime : freetime,
-  }
-  
-  UserReg(userjson).then(val => {
-    console.log(val);
-    form.style.display = "none";
-    localStorage.setItem("isfirst", true);
-    document.getElementById("dashboard-wrap").style.display = "block";
-  }).catch(err => {
-    console.log(err);
-  })
-  
-  
+    prof: prof,
+    orientation: orientation,
+    roomspc: roomspc,
+    freetime: freetime
+  };
+
+  UserReg(userjson)
+    .then(val => {
+      console.log(val);
+      form.style.display = "none";
+      localStorage.setItem("isfirst", true);
+      document.getElementById("dashboard-wrap").style.display = "block";
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
+
+function test() {
+  console.log(require("./notifs").getNormalPlan());
+}

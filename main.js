@@ -3,6 +3,7 @@ const path = require("path");
 const url = require("url");
 const { app, BrowserWindow, Menu, ipcMain, Tray } = electron;
 const db = require("./db");
+const notifs = require("./notifs");
 
 let MainWindow;
 let TrayWindow;
@@ -61,12 +62,13 @@ app.on("ready", () => {
 
   show = () => {
     setTimeout(() => {
+      TrayWindow.webContents.send("exercise-details", notifs.getNormalPlan());
       TrayWindow.setAlwaysOnTop(true);
       TrayWindow.show();
-    }, 6000);
+    }, 600000);
   };
 
-  // TrayWindow.webContents.openDevTools();
+  MainWindow.webContents.openDevTools();
   TrayWindow.hide();
   show();
 
@@ -100,8 +102,6 @@ app.on("ready", () => {
     TrayWindow.show();
     traywintop = true;
   });
-
-
 
   MainWindow.on("minimize", function(event) {
     event.preventDefault();

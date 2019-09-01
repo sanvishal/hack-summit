@@ -113,6 +113,7 @@
       </div>
     </div>
   </section>
+
   <section class="section" id="dashboard-wrap">
     <div class="container">
       <div class="columns">
@@ -122,7 +123,7 @@
               <span class="icon has-text-danger" style="margin: 5px;">
                 <i class="far fa-user"></i>
               </span>
-              Hi User
+              <span id = "name" >Hi User</span>
             </h1>
           </div>
         </div>
@@ -184,31 +185,31 @@
               </div>
             </div>
             <div class="column">
-              <span class="subtitle">Eye Tips</span>
               <li>
-                Apply Castor Oil and Olive oil while going to bed this reduces the stress on your eye, nourishes your
-                eye sight
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Distinctio deleniti debitis ea maxime ab voluptates quos illum
+                officiis fugit ducimus dignissimos laboriosam quae nisi error,
+                provident repellat fugiat ullam similique.
               </li>
-              <br>
-              <span class="subtitle">Back Pain tips</span>
               <li>
-                Keep Good Posture, Maintain Healthy weight, do stretches often
-                Apply Heat and cold
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Distinctio deleniti debitis ea maxime ab voluptates quos illum
+                officiis fugit ducimus dignissimos laboriosam quae nisi error,
+                provident repellat fugiat ullam similique.
               </li>
             </div>
           </div>
           <div class="column">
+            <span class="subtitle">Eye Tips</span>
             <li>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Distinctio deleniti debitis ea maxime ab voluptates quos illum
-              officiis fugit ducimus dignissimos laboriosam quae nisi error,
-              provident repellat fugiat ullam similique.
+              Apply Castor Oil and Olive oil while going to bed this reduces the stress on your eye, nourishes your
+              eye sight
             </li>
+            <br>
+            <span class="subtitle">Back Pain tips</span>
             <li>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Distinctio deleniti debitis ea maxime ab voluptates quos illum
-              officiis fugit ducimus dignissimos laboriosam quae nisi error,
-              provident repellat fugiat ullam similique.
+              Keep Good Posture, Maintain Healthy weight, do stretches often
+              Apply Heat and cold
             </li>
             <li>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -225,10 +226,47 @@
     const electron = require("electron");
     const ioHook = require("iohook");
     const os = require("os");
+    const deasync = require("deasync");
+    const db = require("./db");
     const uptime2 = require("os-uptime");
-
     const { ipcRenderer } = electron;
 
+    // Wait  Ffor a promise without using the await
+    function wait(promise) {
+      var done = 0;
+      var result = null;
+      promise.then(
+        // on value
+        function (value) {
+          done = 1;
+          result = value;
+          return value;
+        },
+        // on exception
+        function (reason) {
+          done = 1;
+          throw reason;
+        }
+      );
+
+      while (!done) deasync.runLoopOnce();
+
+      return result;
+    }
+
+    const UserDetails = () => {
+      const obj = wait(db.userinfo.find({}));
+      return obj;
+    };
+
+    const getUserDetails = () => {
+      return UserDetails()[0].data;
+    };
+
+    var User = getUserDetails();
+    let name = document.getElementById("name");
+    name.innerHTML = `Hi ${User.name}`;
+    
     let usage = document.getElementById("usage-span");
     let rest = document.getElementById("rest-span");
     let freq = document.getElementById("freq-span");
@@ -261,6 +299,8 @@
     ioHook.start();
   </script>
   <script src="mwctrl.js"></script>
+  <script src="notifs.js"></script>
+  <!-- <script src="temp.js"></script> -->
 </body>
 
 </html>
