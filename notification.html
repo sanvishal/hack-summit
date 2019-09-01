@@ -18,6 +18,7 @@
 
 <body id="notif-bg" scrolling="no">
   <div class ="has-text-centered rand-message"><i class="fa fa-bell"></i> <span class = "rand-message-span">Time to Stretch up a little</span></div>
+  <div class = "ename has-text-centered" id = "ename"></div>
   <section class="section">
     <div class="columns">
       <div class="column">
@@ -56,6 +57,7 @@
   let imgsrc = document.getElementById("notif-img-src");
   let desc = document.getElementById("description");
   let ben = document.getElementById("benifits");
+  let ename = document.getElementById("ename");
 
   yes.addEventListener("click" , (e) => {
     ipcRenderer.send("yes:clicked", 1);
@@ -70,7 +72,10 @@
   })
 
   ipcRenderer.on("exercise-details", (err, details) => {
-    console.log(details)
+    desc.innerText = details.desc;
+    benefits.innerText = details.ben;
+    imgsrc.src = details.img;
+    ename.innerText = details.ename;
   })
 
 
