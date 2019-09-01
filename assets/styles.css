@@ -123,3 +123,7 @@ input:checked + .slider:before {
     rgba(248, 87, 166, 1) 0%
   );
 }
+
+.dash-msg {
+  color: #777b90;
+}
