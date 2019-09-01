@@ -6,13 +6,13 @@ const db = require("./db");
 
 let MainWindow;
 let TrayWindow;
-let traywintop = false;
+let traywintop = false,
+  done = false;
 
 // const UserReg = async (data) => {
 //   const obj = await db.userinfo.insert({data})
 //   return obj;
 // }
-
 
 app.on("ready", () => {
   // let isfirst = window.localStorage.getItem("isfirst", true);
@@ -59,8 +59,16 @@ app.on("ready", () => {
     })
   );
 
-  TrayWindow.webContents.openDevTools();
+  show = () => {
+    setTimeout(() => {
+      TrayWindow.setAlwaysOnTop(true);
+      TrayWindow.show();
+    }, 6000);
+  };
+
+  // TrayWindow.webContents.openDevTools();
   TrayWindow.hide();
+  show();
 
   const mainMenu = new Menu.buildFromTemplate(mainMenTemplate);
   Menu.setApplicationMenu(mainMenu);
@@ -93,28 +101,8 @@ app.on("ready", () => {
     traywintop = true;
   });
 
-  setTimeout( ()=> {
-    // if(!localStorage.getItem("isfirst")){
-      TrayWindow.show();
-      hidenot();
-    // }
-  }, 18000)
 
-  shownot = () => {
-    setInterval( ()=> {
-        TrayWindow.setAlwaysOnTop();
-        TrayWindow.show();
-        hidenot();
-    }, 18000)
-  }
 
-  hidenot = () => {
-    setInterval( () => {
-      TrayWindow.hide();
-      shownot();
-    }, 6000)
-  }
-  
   MainWindow.on("minimize", function(event) {
     event.preventDefault();
     MainWindow.hide();
@@ -149,6 +137,17 @@ ipcMain.on("isfirst:submit", (err, data) => {
     console.log(data);
     window.localStorage.setItem("isfirst", true);
   }
+});
+
+ipcMain.on("yes:clicked", (err, item) => {
+  TrayWindow.hide();
+  show();
+});
+
+ipcMain.on("no:clicked", (err, item) => {
+  // alert("YOU WILL BE FACING THE CONSEQUENCES!");
+  TrayWindow.hide();
+  show();
 });
 
 const mainMenTemplate = [
