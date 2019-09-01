@@ -3,7 +3,9 @@ const { app } = require("electron");
 const Datastore = require("nedb-promises");
 const dbFactory = fileName =>
   Datastore.create({
-    filename: `./data/${fileName}`,
+    filename: `${
+      "."
+    }/data/${fileName}`,
     timestampData: true,
     autoload: true
   });

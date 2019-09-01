@@ -3,9 +3,17 @@ const path = require("path");
 const url = require("url");
 const { app, BrowserWindow, Menu, ipcMain, Tray } = electron;
 const db = require("./db");
+const notifs = require("./notifs");
 
 let MainWindow;
 let TrayWindow;
+let traywintop = false,
+  done = false;
+
+// const UserReg = async (data) => {
+//   const obj = await db.userinfo.insert({data})
+//   return obj;
+// }
 
 app.on("ready", () => {
   // let isfirst = window.localStorage.getItem("isfirst", true);
@@ -52,8 +60,17 @@ app.on("ready", () => {
     })
   );
 
-  MainWindow.webContents.openDevTools();
+  show = () => {
+    setTimeout(() => {
+      TrayWindow.webContents.send("exercise-details", notifs.getNormalPlan());
+      TrayWindow.setAlwaysOnTop(true);
+      TrayWindow.show();
+    }, 6000);
+  };
+
+  TrayWindow.webContents.openDevTools();
   TrayWindow.hide();
+  show();
 
   const mainMenu = new Menu.buildFromTemplate(mainMenTemplate);
   Menu.setApplicationMenu(mainMenu);
@@ -75,6 +92,7 @@ app.on("ready", () => {
     }
   ]);
   tray.setContextMenu(contextMenu);
+
   tray.on("right-click", () => {
     tray.popUpContextMenu();
   });
@@ -82,6 +100,7 @@ app.on("ready", () => {
     // MainWindow.maximize();
     // MainWindow.setAlwaysOnTop(true);
     TrayWindow.show();
+    traywintop = true;
   });
 
   MainWindow.on("minimize", function(event) {
@@ -118,6 +137,17 @@ ipcMain.on("isfirst:submit", (err, data) => {
     console.log(data);
     window.localStorage.setItem("isfirst", true);
   }
+});
+
+ipcMain.on("yes:clicked", (err, item) => {
+  TrayWindow.hide();
+  show();
+});
+
+ipcMain.on("no:clicked", (err, item) => {
+  // alert("YOU WILL BE FACING THE CONSEQUENCES!");
+  TrayWindow.hide();
+  show();
 });
 
 const mainMenTemplate = [

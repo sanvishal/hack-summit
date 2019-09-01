@@ -23,15 +23,15 @@
       <div class="column">
         <figure
         class = "image notif-img">
-        <img src="https://i0.wp.com/thumbs.gfycat.com/OrderlyCraftyLadybug-size_restricted.gif?w=1155"/>
+        <img src="https://i0.wp.com/thumbs.gfycat.com/OrderlyCraftyLadybug-size_restricted.gif?w=1155" id = "notif-img-src"/>
       </figure>
     </div>
     <div id="text">
-      <div class = "desc">
+      <div class = "desc" id = "description">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
         Expedita, quae quod, adipisci corrupti architecto minus qui esse</div>
         <div class ="divider"></div>
-        <div class = "desc">
+        <div class = "desc" id = "benefits">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
         </div>
       </div>
@@ -39,8 +39,8 @@
         <div class="column">
           <div class="title" id="text" style="text-align: center">
             <div class = "did-you">Did you really do it?</div>
-            <span class="btn"><i class="fa fa-check"></i></span>
-            <span class="btn"><i class="fa fa-times"></i></span>
+            <span class="btn" id = "yes"><i class="fa fa-check"></i></span>
+            <span class="btn" id = "no"><i class="fa fa-times"></i></span>
           </div>
         </div>
       </div>
@@ -48,6 +48,31 @@
   </section>
 </body>
 <script>
+  const electron = require('electron');
+  const { ipcRenderer } = electron;
+  let yes = document.getElementById("yes");
+  let no = document.getElementById("no");
+  let imgsrc = document.getElementById("notif-img-src");
+  let desc = document.getElementById("description");
+  let ben = document.getElementById("benifits");
+
+  yes.addEventListener("click" , (e) => {
+    ipcRenderer.send("yes:clicked", 1);
+  })
+
+  ipcRenderer.on("no:clicked", (err, item) => {
+    alert('YOU WILL BE FACING CONSEQUENCES');
+  })
+
+  no.addEventListener("click", (e) => {
+    ipcRenderer.send("no:clicked", 1);
+  })
+
+  ipcRenderer.on("exercise-details", (err, details) => {
+    console.log(details)
+  })
+
+
   let msgs = [
     "Time to stretch up a little",
     "Get up and walk!",

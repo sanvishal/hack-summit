@@ -1,5 +1,5 @@
 var deasync = require("deasync");
-
+var db = require("./db");
 // Wait for a promise without using the await
 function wait(promise) {
   var done = 0;

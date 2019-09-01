@@ -18,6 +18,7 @@ let form = document.getElementById("form-wrap");
 
 submitbtn.addEventListener("click", e => {
   var name = document.getElementById("name-ipc").value;
+  var prof = document.getElementById("prof-ipc").value;
   var gender = document.getElementById("gender-ipc").value;
   var profession = document.getElementById("prof-ipc").value;
   if (document.getElementById("standing-desk-ipc").checked) {
@@ -39,10 +40,10 @@ submitbtn.addEventListener("click", e => {
   const userjson = {
     name: name,
     gender: gender,
+    prof: prof,
     orientation: orientation,
     roomspc: roomspc,
-    freetime: freetime,
-    prof: profession
+    freetime: freetime
   };
 
   UserReg(userjson)
